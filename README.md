@@ -3,9 +3,11 @@ Beautiful Syntax
 A. Parens, Braces, Linebreaks
 
 // if/else/for/while/try always have spaces, braces and span multiple lines
+
 // this encourages readability
 
 // 2.A.1.1
+
 // Examples of really cramped syntax
 
 if(condition) doSomething();
