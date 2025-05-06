@@ -425,4 +425,63 @@ delegator("alpha", 1, 2, 3);
 
 ---
 
+7. Code Clarity and Flow Control
+A. Conditional Delegation Example
+Of course, the caseKey argument could easily be based on some other arbitrary condition.
+
+js
+Copy code
+var caseKey, someUserInput;
+
+// Possibly some kind of form input?
+someUserInput = 9;
+
+if (someUserInput > 10) {
+  caseKey = "alpha";
+} else {
+  caseKey = "beta";
+}
+
+// or...
+
+caseKey = someUserInput > 10 ? "alpha" : "beta";
+
+// And then...
+
+delegator(caseKey, someUserInput);
+// [ "Beta", 1 ]
+
+// And of course...
+
+delegator();
+// [ "Default", 0 ]
+B. Early Returns Promote Code Readability
+Using early returns can simplify function flow and make the code easier to read, with negligible performance difference.
+
+7.B.1.1
+Bad:
+function returnLate(foo) {
+  var ret;
+
+  if (foo) {
+    ret = "foo";
+  } else {
+    ret = "quux";
+  }
+  return ret;
+}
+Good:
+
+js
+Copy code
+function returnEarly(foo) {
+  if (foo) {
+    return "foo";
+  }
+  return "quux";
+}
+
+
+
+
 Stay consistent, name thoughtfully, and write clear, maintainable code!
